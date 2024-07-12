@@ -3,8 +3,8 @@ updated 20240703
 
 ### Полное удаление VS Code ###  
 - удалить программу из панели управления;  
-- удалить папку c:\Users\UserName\\.vscode  
-- удалить папку c:\Users\UserName\AppData\Roaming\Code  
+- удалить папку `c:\Users\UserName\.vscode`  
+- удалить папку `c:\Users\UserName\AppData\Roaming\Code`  
 
 ### Установка VS Code ###  
 - https://code.visualstudio.com/  
