@@ -8,3 +8,4 @@ updated 20240712
 
 Отфильтровать в просмотре переменные шрифты: Filters - Technology - Variable.  
 
+
