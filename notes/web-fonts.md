@@ -1,5 +1,5 @@
 ## Web-Fonts ##  
-updated 20240714  
+updated 20240715  
 
 ### Google Fonts ###  
 
@@ -17,6 +17,8 @@ https://transfonter.org/
 
 - Используется для подключения файлов из локальной папки  
 Каждая вариация шрифта подключается своим `@font-face`  
+
+- директива `@font-face` должна стоять в CSS сразу за директивами @import  
 
 - Можно использовать свое название `font-family` для каждого варианта, например, `font-family: 'Roboto-Regular';` и `font-family: 'Roboto-Bold';` и спользовать эти названия `font-family` в CSS:  
 ```
@@ -70,12 +72,13 @@ src: local("Roboto-Regular"),
 - В случае использования вариативного шрифта в CSS применяются дополнительные параметры:
 ```
 font-family: "Open Sans", sans-serif;  
-  font-optical-sizing: auto;  
-  font-weight: 400;  
-  font-style: normal;  
-  font-variation-settings: "wdth" 75;  
+font-optical-sizing: auto;  
+font-weight: 400;  
+font-style: normal;  
+font-variation-settings: "wdth" 75;  
 ```
 где свойство `font-variation-settings` контролирует характеристики вариативных шрифтов с помощью четырёхбуквенных имён осей: стандартных или специфичных для шрифта. Эти имена зашиты прямо в шрифте.  
+
 Названия стандартных осей:  
 `"wght" 675` — weight  
 `"wdth" 75` — stretch (condensed)  
@@ -83,11 +86,21 @@ font-family: "Open Sans", sans-serif;
 `"ital" 0.5` — style (0 - not italic, 0.5 - halfway italic, 1 - fully italic)  
 `"opsz" none ` — optical sizing ( auto, none)  
 
+- Важно в `font-family` в CSS указывать после основного шрифта веб-безопасный шрифт, а потом, на крайний случай, тип шрифта `serif`, `sans-serif`, `monospace`, `cursive`, `fantasy`, `system-ui`. В случае, если первый шрифт не загрузится, браузер воспользуется альтернативными вариантами.  
+
+Примеры:  
+font-family: Roboto, Arial, Tahoma, sans-serif;  
+font-family: "Roboto Slab", Georgia, "Times New Roman" serif;  
+font-family: "Roboto Mono", "Courier New", "Lucida Console", monospace;  
+
 ### Подключение шрифтов через CSS директиву `@import` ###  
 
+- Используется для подключения шрифтов из удаленного хранилища (Google Fonts) в `css` файле (например вариативный шрифт `Open Sans`, `Roman`, `Regular 400`, `Condensed 75`):  
+```
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75&display=swap');  
+```  
 
-
-
+- директива `@import` должна стоять первой в CSS  
 
 ### Подключение шрифтов через разметку тегом `<link>` в теге `<head>` ###  
 
@@ -111,15 +124,6 @@ font-family: "Open Sans", sans-serif;
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75&display=swap" rel="stylesheet">  
 ```
-
-Подключение шрифта с удаленного хранилища Google Fonts через `@import` в `css` файле (например вариативный шрифт `Open Sans`, `Roman`, `Regular 400`, `Condensed 75`):  
-```
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75&display=swap');  
-```
-
-Подключение шрифта из файла через CSS:  
-
-
 
 ### Параметры шрифтов ###
 
