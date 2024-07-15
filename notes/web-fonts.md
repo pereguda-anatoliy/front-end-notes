@@ -1,6 +1,28 @@
 ## Web-Fonts ##  
 updated 20240715  
 
+### Web-Fonts Сheat sheet ##  
+
+```
+@font-face {  
+  font-display: swap;  
+  font-family: 'Roboto';  
+  font-style: normal;  
+  font-weight: 400;  
+  src: url('../fonts/roboto-v30-latin-regular.woff2') format('woff2');  
+}  
+```
+
+```
+body {
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+}
+```
+
 ### Google Fonts ###  
 
 Бибилиотека бесплатных web-fonts для скачивания и онлайн использования:  
@@ -33,6 +55,22 @@ body {
   font-family: "Roboto", sans-serif;  
   font-weight: normal;  
 }  
+```
+
+- Существует компактная форма описания `font-family` (применяется редко, порядок важен) и развернутая:
+```
+body {
+    font: 700 italic normal normal 16px/1.5 Roboto, Arial, sans-serif;
+/*
+font-weight: 700;
+font-style: italic;
+font-stretch: normal;
+font-variant: normal;
+font-size: 16px;
+line-height: 1.5;
+font-family: Roboto, Arial, sans-serif;
+*/
+}
 ```
 
 - Содержание `@font-face` в случае использования с **Modern Browsers**:  
